@@ -10,16 +10,16 @@ list0 = [E]
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-for n in range(4):
+for n in range(10):
     generate(list0)
     ax.scatter(list0[-1].position[0][0],
                list0[-1].position[0][1],
                list0[-1].position[0][2], c='red', marker='x',)
     plt.show
 
-for r in range(10):
-    for n in range(4):
-        result = solve(list0, n+1, dt=np.linspace(0, 1, 10)).T
+for r in range(8):
+    for n in range(10):
+        result = solve(list0, n+1, dt=np.linspace(0, 1, 20)).T
         ax.plot(result[0], result[1], result[2], c='orange', marker = '.')
 
 # result = solve(list0, 1, dt=np.linspace(0, 10, 300)).T
